@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Play Colorful Tetris - A modern, responsive Tetris game with beautiful graphics and smooth gameplay" />
+  <meta name="keywords" content="tetris, game, puzzle, browser game, html5, canvas" />
+  <meta name="author" content="Tetris Game" />
+  <meta name="theme-color" content="#7c4dff" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:title" content="Colorful Tetris" />
+  <meta property="og:description" content="Play Colorful Tetris - A modern, responsive Tetris game" />
+  <meta property="og:image" content="https://your-domain.com/tetris-preview.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://your-domain.com/" />
+  <meta property="twitter:title" content="Colorful Tetris" />
+  <meta property="twitter:description" content="Play Colorful Tetris - A modern, responsive Tetris game" />
+  <meta property="twitter:image" content="https://your-domain.com/tetris-preview.png" />
+  
+  <title>Colorful Tetris - Modern Tetris Game</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+  
+  <link rel="stylesheet" href="styles.css" />
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="script.js" as="script" />
+  <link rel="preload" href="styles.css" as="style" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Colorful Tetris</h1>
+      <div class="scoreboard">
+        <div class="score-item"><span>Score</span><strong id="score">0</strong></div>
+        <div class="score-item"><span>Level</span><strong id="level">1</strong></div>
+        <div class="score-item"><span>Lines</span><strong id="lines">0</strong></div>
+        <div class="score-item"><span>Best</span><strong id="best">0</strong></div>
+      </div>
+      <a href="landing.html" class="landing-link">🏠</a>
+    </header>
+
+    <main class="game-layout">
+      <div class="board-wrap">
+        <canvas id="board" width="300" height="600" aria-label="Tetris board" role="img"></canvas>
+        <div id="gameOver" class="game-over hidden">
+          <h2>Game Over!</h2>
+          <p>Final Score: <span id="finalScore">0</span></p>
+          <button id="playAgain">Play Again</button>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="panel">
+          <h2>Next</h2>
+          <canvas id="next" width="120" height="120" aria-label="Next piece" role="img"></canvas>
+        </div>
+        <div class="panel">
+          <h2>Level Info</h2>
+          <div class="level-info">
+            <div class="level-progress">
+              <span>Progress to Level <span id="nextLevel">2</span></span>
+              <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+              </div>
+              <span id="linesToNext">10 lines to go</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>Audio</h2>
+          <div class="audio-controls">
+            <div class="volume-control">
+              <label for="volumeSlider">Volume</label>
+              <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider">
+              <span id="volumeValue">70%</span>
+            </div>
+            <button id="muteBtn" class="mute-btn">🔊</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>Controls</h2>
+          <ul class="controls-list">
+            <li>← →: Move</li>
+            <li>↑: Rotate</li>
+            <li>↓: Soft Drop</li>
+            <li>Space: Hard Drop</li>
+            <li>P: Pause / Resume</li>
+            <li>N: New Game</li>
+          </ul>
+        </div>
+        <div class="panel actions">
+          <button id="newGame">New Game</button>
+          <button id="pause">Pause</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="app-footer">
+      <span>Have fun! 🌈</span>
+      <div class="footer-links">
+        <a href="#" onclick="showControls()">Controls</a>
+        <a href="#" onclick="showAbout()">About</a>
+      </div>
+      <div class="made-by-credit">
+        <span>✨ Made with ❤️ by <strong>Rajat</strong></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="gameOverModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>🎮 Game Over! 🎮</h2>
+      <div class="final-stats">
+        <div class="stat">
+          <span class="stat-label">Final Score</span>
+          <span class="stat-value" id="modalFinalScore">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Level Reached</span>
+          <span class="stat-value" id="modalFinalLevel">1</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Lines Cleared</span>
+          <span class="stat-value" id="modalFinalLines">0</span>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button id="modalPlayAgain" class="btn-primary">Play Again</button>
+        <button id="modalClose" class="btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+

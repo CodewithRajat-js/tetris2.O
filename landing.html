@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colorful Tetris - Made by Rajat</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .container {
+      text-align: center;
+      max-width: 800px;
+      padding: 2rem;
+    }
+    .title {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+    .feature {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .feature h3 { color: #ffd166; margin-bottom: 0.5rem; }
+    .cta-buttons { margin: 3rem 0; }
+    .btn {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 0 0.5rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      color: white;
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    .made-by {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    .made-by h3 { color: #4ecdc4; margin-bottom: 0.5rem; }
+    @media (max-width: 768px) {
+      .title { font-size: 2.5rem; }
+      .features { grid-template-columns: 1fr; }
+      .btn { display: block; margin: 0.5rem auto; max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">🎮 Colorful Tetris</h1>
+    <p class="subtitle">Experience the classic puzzle game reimagined with modern graphics</p>
+
+    <div class="features">
+      <div class="feature">
+        <span class="feature-icon">🎨</span>
+        <h3>Beautiful Graphics</h3>
+        <p>Modern UI with gradients and smooth animations</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">⚡</span>
+        <h3>Progressive Difficulty</h3>
+        <p>Speed increases with each level</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">🎵</span>
+        <h3>Audio Experience</h3>
+        <p>Sound effects and background music</p>
+      </div>
+      <div class="feature">
+        <span class="feature-icon">📱</span>
+        <h3>Responsive Design</h3>
+        <p>Works on all devices</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="index.html" class="btn btn-primary">🎯 Play Now</a>
+      <a href="#about" class="btn btn-secondary" onclick="showAbout()">ℹ️ About</a>
+    </div>
+
+    <div class="made-by">
+      <h3>✨ Made with ❤️ by Rajat</h3>
+      <p>A passionate developer who loves creating engaging web experiences. This Tetris game showcases modern web technologies and attention to detail.</p>
+    </div>
+  </div>
+
+  <script>
+    function showAbout() {
+      alert(`Colorful Tetris v2.0\n\nA modern Tetris game built with HTML5 Canvas and JavaScript.\n\nMade by Rajat\nEnjoy the game! 🌈`);
+    }
+  </script>
+</body>
+</html>
